@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Atma';
+    src: local('Atma SemiBold'), local('Atma-SemiBold'),
+        url('./fonts/Atma-SemiBold.woff2') format('woff2'),
+        url('./fonts/Atma-SemiBold.woff') format('woff'),
+        url('./fonts/Atma-SemiBold.ttf') format('truetype'),
+        url('./fonts/Atma-SemiBold.svg#Atma-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Abel';
+    src: local('Abel Regular'), local('Abel-Regular'),
+        url('./fonts/Abel-Regular.woff2') format('woff2'),
+        url('./fonts/Abel-Regular.woff') format('woff'),
+        url('./fonts/Abel-Regular.ttf') format('truetype'),
+        url('./fonts/Abel-Regular.svg#Abel-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

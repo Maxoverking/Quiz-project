@@ -1,0 +1,9 @@
+:root{
+    --black : rgb(0, 0, 0);
+    --white : rgb(255, 255, 255);
+    --pink : rgb(248, 141, 173);
+    --lavender-blush : rgb(255, 240, 245);
+    --saffron : rgb(250, 192, 72);
+    --vista-blue : rgb(131, 144,250);
+    --delft-blue : rgb(29, 47, 111);
+}
