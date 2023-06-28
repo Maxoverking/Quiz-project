@@ -1,4 +1,4 @@
-import{s as ue,r as h,e as vt,m as kr,i as Pr,j as A,b as Me}from"./index-ca38b7bc.js";function y(){return y=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},y.apply(this,arguments)}function D(e,t){if(e==null)return{};var n={},r=Object.keys(e),o,s;for(s=0;s<r.length;s++)o=r[s],!(t.indexOf(o)>=0)&&(n[o]=e[o]);return n}const pc=ue.div`
+import{s as ue,r as h,e as vt,m as kr,i as Pr,j as A,b as Me}from"./index-a5034a24.js";function y(){return y=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},y.apply(this,arguments)}function D(e,t){if(e==null)return{};var n={},r=Object.keys(e),o,s;for(s=0;s<r.length;s++)o=r[s],!(t.indexOf(o)>=0)&&(n[o]=e[o]);return n}const pc=ue.div`
 height: 100vh;
 padding: 30px;
 background:var(--delft-blue);
@@ -16,7 +16,7 @@ background:var(--delft-blue);
   border-radius:10px;
   box-shadow: var(--form-shadow);
   @media (min-width: 768px) {
-    background-image: url("./public/lego-border.png") ;
+    background-image: url("/lego-border.png") ;
   }
 `,hc=ue.div`
     display: flex;
