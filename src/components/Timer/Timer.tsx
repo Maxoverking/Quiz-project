@@ -9,7 +9,7 @@ import { ITimerProps } from "./interface/ITimerProps";
 
 const Timer: FC<ITimerProps> = ({ selectedAnswer, setSelectedAnswer }) => {
   const dispatch = useAppDispatch();
-  const [time, setTime] = useState(60); // Изначально устанавливаем время в секундах
+  const [time, setTime] = useState(60);
   const [stop, setStop] = useState(false);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const Timer: FC<ITimerProps> = ({ selectedAnswer, setSelectedAnswer }) => {
 
     if (!stop && time > 0) {
       timer = setInterval(() => {
-        setTime((prevTime) => prevTime - 1); // Уменьшаем время на 1 секунду каждую секунду
+        setTime((prevTime) => prevTime - 1);
       }, 1000);
     }
 

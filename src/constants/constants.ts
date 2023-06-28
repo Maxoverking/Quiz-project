@@ -2,11 +2,11 @@ export const STATUS = {
     idle: "idle",
     loading: "loading",
     success: "success",
-    error: "error"
+    error: "Server Error!!!"
 } as const;
 
 export const QUIZ_STATUS = {
+    choose: "/",
     start: "start",
     progress: "progress",
-    end: "end",
 } as const;

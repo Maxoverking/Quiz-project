@@ -3,6 +3,7 @@ import { DIV, H2 } from "./LoaderTimer.styled";
 import { useAppDispatch } from "../../hooks/dispatch";
 import { QUIZ_STATUS } from "../../constants/constants";
 import { useNavigate } from "react-router-dom";
+import { quizStartAction } from "../../redux/quiz/quizSlice";
 
 const LoaderTimer: FC = () => {
   const dispatch = useAppDispatch();
@@ -13,11 +14,12 @@ const LoaderTimer: FC = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCount((prevCount) => prevCount - 1);
-    }, 700);
+    }, 800);
 
     if (count < 0) {
       clearInterval(timer);
       navigate(`/${QUIZ_STATUS.progress}`);
+      dispatch(quizStartAction(QUIZ_STATUS.progress));
     }
 
     return () => {
@@ -27,7 +29,7 @@ const LoaderTimer: FC = () => {
 
   return (
     <DIV>
-      <H2>{count === 0 ? "START" : count}</H2>
+      <H2 count={count}>{count === 0 ? "START" : count === -1 ? "" : count}</H2>
     </DIV>
   );
 };

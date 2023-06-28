@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+interface IFinish {
+  time: number
+}
 
 export const TIMER_WRAP = styled.div`
     font-family: Abel;
@@ -16,6 +19,7 @@ export const TIMER_WRAP = styled.div`
 export const FINISH = styled.div`
 height: 10px;
 margin: 10px 0px;
+color : var(--time-finish);
 `;
 
 

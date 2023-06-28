@@ -5,11 +5,11 @@ import { useQuizSelector } from "../../../redux/quiz/quizSelector";
 import Result from "../../Result/Result";
 
 const AnswerPage: FC = () => {
-  const { question, questionCounter } = useQuizSelector();
+  const { questions, questionCounter } = useQuizSelector();
 
   return (
     <DIV>
-      {question.length === questionCounter ? <Result /> : <AnswersForm />}
+      {questions.length === questionCounter ? <Result /> : <AnswersForm />}
     </DIV>
   );
 };

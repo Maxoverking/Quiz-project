@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { DF_FD_AI } from "../QuizForm/QuizForms/QuizForm.styled";
 
-
 export const DIV_RESULT = styled.div`
     ${DF_FD_AI}
     font-family: "Atma";
@@ -11,6 +10,17 @@ export const H2 = styled.h2`
 margin-top:20px;
 
 `;
+export const H4 = styled.h4`
+margin-top:20px;
+width: 200px;
+height: 200px;
+ background-image:url("./smile.gif"); 
+  background-size: cover;
+  background-repeat: no-repeat; 
+
+`;
+
+
 export const BUTTON = styled.button`
   font-family :"Atma" ;
   padding: 10px 24px;

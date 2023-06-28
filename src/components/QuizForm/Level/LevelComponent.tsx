@@ -14,7 +14,7 @@ const LevelComponent: FC<DifficultyProps> = ({ difficulty, setDifficulty }) => {
   };
   return (
     <>
-      <span>LEVEL</span>
+      <span>Level</span>
       <FormControl>
         <RadioGroup row value={difficulty} onChange={handleChange}>
           <FormControlLabel

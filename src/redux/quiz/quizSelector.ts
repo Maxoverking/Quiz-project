@@ -9,7 +9,7 @@ const isLoadingSelector = (state: RootState) => state.quiz.isLoading;
 
 export const useQuizSelector = () => {
     return {
-        question: useAppSelector(questionSelector),
+        questions: useAppSelector(questionSelector),
         correctAnswer: useAppSelector(correctAnswerSelector),
         questionCounter: useAppSelector(questionCounterSelector),
         quizStart: useAppSelector(quizStartSelector),

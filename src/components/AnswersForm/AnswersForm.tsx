@@ -16,19 +16,22 @@ import { WRAPPER } from "../QuizForm/QuizForms/QuizForm.styled";
 import { useQuizSelector } from "../../redux/quiz/quizSelector";
 import { useNavigate } from "react-router-dom";
 import { objectAnswer } from "./interface/IAnswer";
-import { getQuestionArray } from "../../helpers/getQuestionArray";
+import {
+  decodeEntities,
+  getQuestionArray,
+} from "../../helpers/getQuestionArray";
 
 const AnswersForm: FC = () => {
   const navigate = useNavigate();
-  const { question, questionCounter } = useQuizSelector();
+  const { questions, questionCounter } = useQuizSelector();
   const [selectedAnswer, setSelectedAnswer] = useState(objectAnswer);
 
   const [myAnswer, setMyAnswer] = useState<string[]>([]);
 
   useEffect(() => {
-    const questionArray = getQuestionArray(question[questionCounter]);
+    const questionArray = getQuestionArray(questions[questionCounter]);
     setMyAnswer(questionArray);
-  }, [navigate, question, questionCounter]);
+  }, [navigate, questions, questionCounter]);
 
   const handleRadioChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSelectedAnswer({
@@ -37,12 +40,14 @@ const AnswersForm: FC = () => {
     });
   };
 
+  const decodedString = decodeEntities(questions[questionCounter].question);
+
   return (
     <>
       <WRAPPER>
         <QUESTION_FORM>
-          <h2>{question[questionCounter].category}</h2>
-          <P>{question[questionCounter].question}</P>
+          <h2>{questions[questionCounter].category}</h2>
+          <P>{decodedString}</P>
         </QUESTION_FORM>
         <QUESTION_RADIO>
           <FormControl>

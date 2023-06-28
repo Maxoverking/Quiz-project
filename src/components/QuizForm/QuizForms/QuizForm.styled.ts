@@ -1,10 +1,21 @@
 import styled from "styled-components";
 
+
+
 export const DF_FD_AI = `
   display: flex;
   flex-direction: column;
   align-items: center;
 `
+
+interface isInViewProps {
+  isInView: boolean
+}
+const OPACITY_TRANSITION = `
+  opacity: ${({ isInView }: { isInView: boolean }) => (isInView ? 1 : 0)};
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s;
+`;
+
 export const WRAPPER = styled.div`
   font-family :"Abel" ;
   margin:30px;
@@ -31,7 +42,8 @@ export const DIV_FIELD = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 40vh;
+
+    height: 46vh;
     @media (max-width: 767px) {
     flex-direction: column;
   }
@@ -39,30 +51,33 @@ export const DIV_FIELD = styled.div`
     height: 56vh;
   }
 `;
-
-export const H1 = styled.h1`
-  font-family :"Atma" ;
-  display: flex;
-  justify-content: center;
-  border-radius:20px;
-  margin: 20px;
-  font-size:56px;
+export const DIV_TITLE = styled.div`
   background: var(--saffron-linear);
+height:84px;
 `;
-export const DIV_SLIDER = styled.div`
+
+export const DIV_SLIDER = styled.div<isInViewProps>`
   font-family :"Abel" ;
   ${DF_FD_AI}
   margin: 20px;
   width: 150px;
+  transform: ${({ isInView }) => isInView ? "none" : "translate(-250px, 250px)"};
+  ${OPACITY_TRANSITION};
 `;
-export const DIV_SELECT = styled.div`
+export const DIV_SELECT = styled.div<isInViewProps>`
   margin: 20px;
   width: 200px;
+  transform: ${({ isInView }) => isInView ? "none" : "translateY(-250px)"};
+  opacity: ${({ isInView }) => isInView ? 1 : 0};
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1s;
 `;
-export const DIV_LEVEL = styled.div`
+export const DIV_LEVEL = styled.div<isInViewProps>`
     font-family :"Abel" ;
     ${DF_FD_AI}
     width: 300px;
+      transform: ${({ isInView }) => isInView ? "none" : "translateX(250px)"};
+  opacity: ${({ isInView }) => isInView ? 1 : 0};
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1.5s;
 
     @media (max-width: 480px) {
     width: 20px;
@@ -84,4 +99,6 @@ export const BUTTON = styled.button`
   }
 `;
 // export const SPAN = styled.span`
+/* transform: ${({ isInView }) => isInView ? "none" : "translateX(-250px)"};
+ ${OPACITY_TRANSITION}; */
 // `;

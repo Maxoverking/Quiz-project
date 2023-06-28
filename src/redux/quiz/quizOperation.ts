@@ -14,9 +14,12 @@ export const fetchQuestions = createAsyncThunk('get/question',
                 }
             });
             console.log("🚀  data:", data.results);
+            if (data.results.length === 0) {
+                throw new Error();
+            }
             return data.results;
         } catch (error) {
-            console.error(error);
+            console.log(error);
             throw error;
         }
     }
