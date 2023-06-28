@@ -1,1 +1,0 @@
-import{g as e,h as n,k as c,l as a}from"./index-a5034a24.js";function r(t=e){const o=t===e?n:c(t);return function(){const{store:s}=o();return s}}const p=r();function i(t=e){const o=t===e?p:r(t);return function(){return o().dispatch}}const x=i(),S=x,d=a;export{d as a,S as u};
