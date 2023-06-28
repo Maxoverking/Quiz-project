@@ -15,7 +15,7 @@ export const WRAPPER = styled.div`
   border-radius:10px;
   box-shadow: var(--form-shadow);
   @media (min-width: 768px) {
-    background-image: url("/lego-border.png") ;
+    background-image: url("./lego-border.png") ;
   }
 `;
 
