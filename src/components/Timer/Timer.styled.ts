@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-interface IFinish {
-  time: number
-}
-
 export const TIMER_WRAP = styled.div`
     font-family: Abel;
     display: flex;
