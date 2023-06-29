@@ -18,7 +18,7 @@ import LevelComponent from "../Level/LevelComponent";
 import TypeQuizComponent from "../TypeQuiz/TypeQuizComponent";
 import { quizForm } from "./interface/IUrlRequestQuery";
 import { useInView } from "framer-motion";
-import Title from "../../Title/Title";
+import Title from "../Title/Title";
 
 const QuizForm: FC = () => {
   const navigate = useNavigate();
