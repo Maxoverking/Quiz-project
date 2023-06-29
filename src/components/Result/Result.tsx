@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/dispatch";
 import { quizQuestionCounterZeroAction } from "../../redux/quiz/quizSlice";
 import { STATUS } from "../../constants/constants";
+import { clearQuizLocalStore } from "../../helpers/localStoreOperation";
 
 const Result: FC = () => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const Result: FC = () => {
   }
   const handleGoBack = () => {
     dispatch(quizQuestionCounterZeroAction());
+    clearQuizLocalStore();
     navigate("/");
   };
 

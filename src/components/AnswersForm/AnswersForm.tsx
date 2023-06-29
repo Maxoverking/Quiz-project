@@ -46,6 +46,7 @@ const AnswersForm: FC = () => {
     <>
       <WRAPPER>
         <QUESTION_FORM>
+          <h2>{`№ ${questionCounter + 1}`}</h2>
           <h2>{questions[questionCounter].category}</h2>
           <P>{decodedString}</P>
         </QUESTION_FORM>

@@ -2,11 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import { QuestionState } from "./types/quizTypes";
 import { fetchQuestions } from "./quizOperation";
 import { STATUS, QUIZ_STATUS } from "../../constants/constants";
-import { IUrlRequestQuery } from "../../components/QuizForm/QuizForms/interface/IUrlRequestQuery";
-
-export const localStore = (write: IUrlRequestQuery) => {
-    localStorage.setItem("Quiz", JSON.stringify(write));
-}
 
 export const initQuestionState: QuestionState = {
     questions: [],
@@ -21,8 +16,6 @@ const quizSlice = createSlice({
     initialState: initQuestionState,
     reducers: {
         quizQuestionCounterZeroAction: () => initQuestionState,
-
-        quizStartAction: (state, { payload }) => ({ ...state, quizStart: payload }),
 
         quizEmptyAction: (state, { payload }) => ({ ...state, isLoading: payload }),
 
@@ -40,6 +33,7 @@ const quizSlice = createSlice({
         })
             .addCase(fetchQuestions.fulfilled, (state, { payload }) => {
                 state.questions = payload,
+                    state.quizStart = QUIZ_STATUS.progress,
                     state.isLoading = STATUS.success
             }).addCase(fetchQuestions.rejected, (state) => {
                 state.isLoading = "Server Error!!!"
@@ -48,7 +42,6 @@ const quizSlice = createSlice({
 
 export const quizReducer = quizSlice.reducer;
 export const {
-    quizStartAction,
     quizCorrectAnswerAction,
     quizQuestionCounterAction,
     quizEmptyAction,

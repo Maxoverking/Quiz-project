@@ -19,32 +19,27 @@ import TypeQuizComponent from "../TypeQuiz/TypeQuizComponent";
 import { quizForm } from "./interface/IUrlRequestQuery";
 import { useInView } from "framer-motion";
 import Title from "../Title/Title";
+import { QUIZ_STATUS } from "../../../constants/constants";
+import { quizLocalStore } from "../../../helpers/localStoreOperation";
 
 const QuizForm: FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+
   const ref = useRef(null);
 
   const isInView = useInView(ref, { once: true });
   const [amount, setAmount] = useState(quizForm.amount);
-
-  console.log("🚀  amount:", amount);
   const [category, setCategory] = useState(quizForm.category);
   const [difficulty, setDifficulty] = useState(quizForm.difficulty);
   const [type, setType] = useState(quizForm.type);
 
   const startQuiz = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const requesData = { amount, category, difficulty, type };
 
-    dispatch(
-      fetchQuestions({
-        amount,
-        category,
-        difficulty,
-        type,
-      })
-    );
-
+    dispatch(fetchQuestions(requesData));
+    quizLocalStore(requesData, QUIZ_STATUS.progress);
     navigate("start");
   };
 
