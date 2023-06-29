@@ -1,4 +1,4 @@
-import{s as ue,r as h,k as vt,m as kr,l as Tr,j as I,b as Me}from"./index-46c65485.js";function y(){return y=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},y.apply(this,arguments)}function D(e,t){if(e==null)return{};var n={},r=Object.keys(e),o,s;for(s=0;s<r.length;s++)o=r[s],!(t.indexOf(o)>=0)&&(n[o]=e[o]);return n}const xc=ue.div`
+import{s as ue,r as h,k as vt,m as kr,l as Tr,j as I,b as Me}from"./index-6fc8be79.js";function y(){return y=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},y.apply(this,arguments)}function D(e,t){if(e==null)return{};var n={},r=Object.keys(e),o,s;for(s=0;s<r.length;s++)o=r[s],!(t.indexOf(o)>=0)&&(n[o]=e[o]);return n}const xc=ue.div`
 height: 100vh;
 padding: 30px;
 background:var(--delft-blue);
@@ -18,6 +18,7 @@ background:var(--delft-blue);
   padding: 16px;
   border-radius:10px;
   box-shadow: var(--form-shadow);
+
   @media (min-width: 768px) {
     background-image: url("./lego-border.png") ;
   }
@@ -26,6 +27,9 @@ background:var(--delft-blue);
     justify-content: center;
     height: 80px;
     margin-bottom:20px;
+    @media (max-width: 768px) {
+    margin-top:20px;
+  }
  
 `,Cc=ue.div`
     display: flex;
@@ -35,13 +39,17 @@ background:var(--delft-blue);
     height: 46vh;
     @media (max-width: 767px) {
     flex-direction: column;
+    height: 27vh;
   }
     @media (max-width: 480px) {
-    height: 56vh;
+    height: 42vh;
   }
 `,Sc=ue.div`
   background: var(--saffron-linear);
-height:84px;
+  height:84px;
+   @media (max-width: 440px) {
+    height:44px;
+  }
 `,$c=ue.div`
   font-family :"Abel" ;
   ${En}
@@ -59,9 +67,9 @@ height:84px;
     font-family :"Abel" ;
     ${En}
     width: 300px;
-      transform: ${({isInView:e})=>e?"none":"translateX(250px)"};
-  opacity: ${({isInView:e})=>e?1:0};
-  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1.5s;
+    transform: ${({isInView:e})=>e?"none":"translateX(250px)"};
+    opacity: ${({isInView:e})=>e?1:0};
+    transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1.5s;
 
     @media (max-width: 480px) {
     width: 20px;
