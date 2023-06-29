@@ -48,7 +48,8 @@ img {
   max-width: 100%;
   height: auto;
 }
-.react-tel-input .form-control,
-.react-tel-input .country-list {
-  width: 240px;
+@media (max-width: 400px) {
+  .css-1e7cuzv-MuiFormControl-root {
+    min-width: 182px !important;
+  }
 }

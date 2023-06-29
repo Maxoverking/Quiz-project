@@ -2,7 +2,7 @@ import { FC, useRef } from "react";
 import { useInView } from "framer-motion";
 import { WRAPPER } from "../QuizForm/QuizForms/QuizForm.styled";
 import { useQuizSelector } from "../../redux/quiz/quizSelector";
-import { DIV_RESULT, H2, BUTTON, H4 } from "./Result.styled";
+import { DIV_RESULT, H2, BUTTON, H4, H2R } from "./Result.styled";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/dispatch";
 import { quizQuestionCounterZeroAction } from "../../redux/quiz/quizSlice";
@@ -45,7 +45,7 @@ const Result: FC = () => {
           </>
         ) : (
           <>
-            <H2>Result : {`${percentage} %`}</H2>
+            <H2R percentage={percentage}>Result : {`${percentage} %`}</H2R>
             <h4>Question quantity : {questionCounter} </h4>
             <h4>Correct answer : {correctAnswer} </h4>
           </>

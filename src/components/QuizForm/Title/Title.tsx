@@ -15,7 +15,7 @@ const Title: FC = () => {
       delay: 2,
       text: "Start Quiz",
       rotation: 360,
-      ease: "bounce.out",
+      ease: "elastic.inOut",
     });
   }, []);
 
