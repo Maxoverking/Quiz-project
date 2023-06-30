@@ -19,9 +19,6 @@ const Result: FC = () => {
   const percentage: number = Math.floor(
     (correctAnswer / questionCounter) * 100
   );
-  if (percentage > 30) {
-    console.log("object");
-  }
   const handleGoBack = () => {
     dispatch(quizQuestionCounterZeroAction());
     clearQuizLocalStore();

@@ -7,7 +7,11 @@ import {
 } from "../../redux/quiz/quizSlice";
 import { ITimerProps } from "./interface/ITimerProps";
 
-const Timer: FC<ITimerProps> = ({ selectedAnswer, setSelectedAnswer }) => {
+const Timer: FC<ITimerProps> = ({
+  selectedAnswer,
+  setSelectedAnswer,
+  setCorrect,
+}) => {
   const dispatch = useAppDispatch();
   const [time, setTime] = useState(60);
   const [stop, setStop] = useState(false);
@@ -31,18 +35,26 @@ const Timer: FC<ITimerProps> = ({ selectedAnswer, setSelectedAnswer }) => {
     .padStart(2, "0")}:${(time % 60).toString().padStart(2, "0")}`;
 
   const stopTimer = () => {
+    setCorrect(true);
+
     if (time === 0) {
-      dispatch(quizQuestionCounterAction());
-      setTime(60);
-      setStop(false);
-      setSelectedAnswer({ id: 0, answer: "" });
+      setTimeout(() => {
+        dispatch(quizQuestionCounterAction());
+        setTime(60);
+        setStop(false);
+        setSelectedAnswer({ id: 0, answer: "" });
+        setCorrect(false);
+      }, 1000);
     } else {
-      setStop(true);
-      setTime(60);
-      dispatch(quizCorrectAnswerAction(selectedAnswer));
-      dispatch(quizQuestionCounterAction());
-      setStop(false);
-      setSelectedAnswer({ id: 0, answer: "" });
+      setTimeout(() => {
+        setStop(true);
+        setTime(60);
+        dispatch(quizCorrectAnswerAction(selectedAnswer));
+        dispatch(quizQuestionCounterAction());
+        setStop(false);
+        setSelectedAnswer({ id: 0, answer: "" });
+        setCorrect(false);
+      }, 1000);
     }
   };
 

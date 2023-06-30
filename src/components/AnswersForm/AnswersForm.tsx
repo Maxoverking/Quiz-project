@@ -25,6 +25,7 @@ const AnswersForm: FC = () => {
   const navigate = useNavigate();
   const { questions, questionCounter } = useQuizSelector();
   const [selectedAnswer, setSelectedAnswer] = useState(objectAnswer);
+  const [correct, setCorrect] = useState(false);
 
   const [myAnswer, setMyAnswer] = useState<string[]>([]);
 
@@ -62,6 +63,16 @@ const AnswersForm: FC = () => {
                   control={<Radio />}
                   label={answer}
                   value={answer}
+                  sx={
+                    correct
+                      ? {
+                          color:
+                            questions[questionCounter].correct_answer === answer
+                              ? "green"
+                              : "red",
+                        }
+                      : { color: "black" }
+                  }
                 />
               ))}
             </RadioGroup>
@@ -71,6 +82,7 @@ const AnswersForm: FC = () => {
           <Timer
             selectedAnswer={selectedAnswer}
             setSelectedAnswer={setSelectedAnswer}
+            setCorrect={setCorrect}
           />
         </NEXT_QUIZ>
       </WRAPPER>

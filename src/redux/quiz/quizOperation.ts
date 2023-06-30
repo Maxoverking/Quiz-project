@@ -13,7 +13,7 @@ export const fetchQuestions = createAsyncThunk('get/question',
                     category, difficulty, type,
                 }
             });
-            console.log("🚀  data:", data.results);
+            // console.log("🚀  data:", data.results);
             if (data.results.length === 0) {
                 throw new Error();
             }
