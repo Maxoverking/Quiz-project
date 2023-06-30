@@ -1,4 +1,4 @@
-import{W as f,s as o,c as l,u as p,r as n,Q as u,j as r}from"./index-6fc8be79.js";const d=f`
+import{W as f,s as o,c as l,u as p,r as n,Q as u,j as r}from"./index-41f3826d.js";const d=f`
   from {
     font-size: 56px;
   }
