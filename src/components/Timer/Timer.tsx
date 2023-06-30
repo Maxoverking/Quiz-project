@@ -44,6 +44,7 @@ const Timer: FC<ITimerProps> = ({
         setStop(false);
         setSelectedAnswer({ id: 0, answer: "" });
         setCorrect(false);
+        console.log("object");
       }, 1000);
     } else {
       setTimeout(() => {
@@ -54,6 +55,7 @@ const Timer: FC<ITimerProps> = ({
         setStop(false);
         setSelectedAnswer({ id: 0, answer: "" });
         setCorrect(false);
+        console.log("object2");
       }, 1000);
     }
   };

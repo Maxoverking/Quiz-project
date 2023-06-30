@@ -70,6 +70,13 @@ const AnswersForm: FC = () => {
                             questions[questionCounter].correct_answer === answer
                               ? "green"
                               : "red",
+                          "& .MuiFormControlLabel-label": {
+                            fontSize:
+                              questions[questionCounter].correct_answer ===
+                              answer
+                                ? 28
+                                : 18,
+                          },
                         }
                       : { color: "black" }
                   }
