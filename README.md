@@ -1,4 +1,4 @@
-# Quiz-project React-TypeScript
+# Quiz-project _React-TypeScript_
 
 #### The Quiz is a web application that allows users to participate in quizzes and test their knowledge on various topics. It provides an interactive and engaging platform for users to challenge themselves and have fun while learning. Quiz Categories: The app offers a wide range of quiz categories, such as General Knowledge, Science, History, Sports, etc., catering to different interests and knowledge areas.
 
